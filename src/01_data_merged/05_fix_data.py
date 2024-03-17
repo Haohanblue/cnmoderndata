@@ -1,10 +1,11 @@
 import pandas as pd
 import re
-
+import os
 # 从 Excel 读取数据
 file_path = '../../public/data/temp/01_初次合并/2_转置后的结果.xlsx'  # 请替换为你的文件路径
 df = pd.read_excel(file_path)
-
+if not os.path.exists('../../public/data/result'):
+    os.makedirs('../../public/data/result')
 # 获取列名列表，从第三列开始
 columns = df.columns[2:]
 

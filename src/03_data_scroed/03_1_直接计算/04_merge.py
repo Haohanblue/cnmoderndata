@@ -5,7 +5,8 @@ import pandas as pd
 input_folder = '../../../public/data/temp/03_得分计算/03_1_直接计算/02_weighted_y_ij_entropy'
 output_file = '../../../public/data/temp/03_得分计算/03_1_直接计算/04_方法1总得分.xlsx'
 output_file_2='../../../public/data/result/1_得分_直接计算/方法1得分.xlsx'
-
+if not os.path.exists('../../../public/data/result/1_得分_直接计算'):
+    os.makedirs('../../../public/data/result/1_得分_直接计算')
 # 创建一个空的 DataFrame 用于存储所有年份的得分数据
 combined_scores_df = pd.DataFrame(columns=['省份', '时间', '得分'])
 

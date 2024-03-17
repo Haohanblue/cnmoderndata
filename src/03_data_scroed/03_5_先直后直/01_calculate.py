@@ -3,7 +3,10 @@ import pandas as pd
 
 # 定义文件夹路径
 folder_path = '../../../public/data/temp/03_得分计算/03_4_先墒后墒/02_标准化数据'
-
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+if not os.path.exists('../../../public/data/result/5_得分_先直后直'):
+    os.makedirs('../../../public/data/result/5_得分_先直后直')
 # 读取文件夹中所有.xlsx文件的路径和文件名
 file_paths = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.xlsx')]
 

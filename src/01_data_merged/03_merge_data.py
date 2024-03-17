@@ -4,7 +4,8 @@ import pandas as pd
 
 # 指定包含xlsx文件的文件夹路径
 folder_path = '../../public/data/source'
-
+if not os.path.exists('../../public/data/temp/01_初次合并'):
+    os.makedirs('../../public/data/temp/01_初次合并')
 # 自定义排序函数，按字母和数字的组合顺序进行排序
 def custom_sort(file_name):
     match = re.match(r'([A-Z]+)(\d+)\.xlsx', file_name)

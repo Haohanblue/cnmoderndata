@@ -4,7 +4,8 @@ import pandas as pd
 # 设置输入和输出文件夹路径
 input_base_folder = '../../../public/data/temp/03_得分计算/03_2_先墒后直/03_weights_entropy'
 output_base_folder = '../../../public/data/temp/03_得分计算/03_2_先墒后直/05_分项得分'
-
+if not os.path.exists(output_base_folder):
+    os.makedirs(output_base_folder)
 # 处理每个文件夹
 for folder_name in os.listdir(input_base_folder):
     input_folder = os.path.join(input_base_folder, folder_name)

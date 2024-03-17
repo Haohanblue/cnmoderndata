@@ -5,7 +5,8 @@ import pandas as pd
 input_folder = '../../../public/data/temp/03_得分计算/03_3_先直后墒/03_weighted_y_ij_entropy'
 output_file = '../../../public/data/temp/03_得分计算/03_3_先直后墒/05_方法3总得分.xlsx'
 output_file_2='../../../public/data/result/3_得分_先直后墒/方法3得分.xlsx'
-
+if not os.path.exists('../../../public/data/result/3_得分_先直后墒'):
+    os.makedirs('../../../public/data/result/3_得分_先直后墒')
 # 创建一个空的 DataFrame 用于存储所有年份的得分数据
 combined_scores_df = pd.DataFrame(columns=['省份', '时间', '得分'])
 
@@ -45,5 +46,6 @@ combined_scores_df['排名'] = combined_scores_df.groupby('时间')['得分'].ra
 # 将结果保存到新的 Excel 文件中
 combined_scores_df.to_excel(output_file, index=False)
 # 将结果保存到新的 Excel 文件中
+
 combined_scores_df.to_excel(output_file_2, index=False)
 print("得分计算并保存完成。")
