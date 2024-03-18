@@ -16,14 +16,14 @@ if not os.path.exists(output_folder):
 
 # 确定 ARIMA 模型的阶数
 order = (1, 0, 1)  # ARIMA(1,0,1)
-
+idx=1
 # 遍历处理后的数据文件夹中的所有文件
 for filename in os.listdir(input_folder):
     if filename.endswith('.xlsx'):
 
         # 读取数据
         filepath = os.path.join(input_folder, filename)
-        print("正在读取{}".format(filepath))
+        print(f"正在读取{filepath[-12:]}，第{idx}/{len(os.listdir(input_folder))}个文件")
         df = pd.read_excel(filepath)
 
         # 获取数据列（从第三列开始）
@@ -53,5 +53,6 @@ for filename in os.listdir(input_folder):
         new_file_name = filename.replace('_插值填充.xlsx', '_预测填充.xlsx')
         output_filepath = os.path.join(output_folder, new_file_name)
         df.to_excel(output_filepath, index=False)
-        print("已经保存{}".format(output_filepath))
+        print(f"正在读取{output_filepath[-12:]}，第{idx}/{len(os.listdir(input_folder))}个文件")
+        idx += 1
 print("所有文件的填充后数据已保存到", output_folder, "文件夹中。")

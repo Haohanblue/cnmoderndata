@@ -27,7 +27,9 @@ df = df[df['时间'].astype(int).between(2000, 2023)]
 # 保存调整后的结果到新的 Excel 文件
 adjusted_file_path = '../../public/data/temp/01_初次合并/3_调整后的结果.xlsx'  # 请替换为你的文件路径
 df.to_excel(adjusted_file_path, index=False)
-adjusted_file_path_2 = '../../public/data/result/01_原始数据合集.xlsx'  # 请替换为你的文件路径
+adjusted_file_path_2 = '../../public/data/result/原始数据.xlsx'  # 请替换为你的文件路径
 df.to_excel(adjusted_file_path_2, index=False)
+adjusted_file_path_3 = '../../public/data/result/output/source_data.xlsx'  # 请替换为你的文件路径
+df.to_excel(adjusted_file_path_3, index=False)
 # 打印结果路径
 print(f"调整后的结果保存至：{adjusted_file_path},同时保存至:{adjusted_file_path_2}")

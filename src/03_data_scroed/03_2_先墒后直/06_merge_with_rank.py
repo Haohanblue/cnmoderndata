@@ -49,9 +49,9 @@ merged_df_copy['总得分排名'] = yearly_ranking.astype(int)
 # 保存合并后的数据到新文件
 merged_file_path = '../../../public/data/temp/03_得分计算/03_2_先墒后直/合并数据_排名.xlsx'
 merged_df_copy.to_excel(merged_file_path, index=False, engine='openpyxl')
-if not os.path.exists('../../../public/data/result/2_得分_先墒后直'):
-    os.makedirs('../../../public/data/result/2_得分_先墒后直')
-merged_file_path_2 = '../../../public/data/result/2_得分_先墒后直/方法2得分.xlsx'
+if not os.path.exists('../../../public/data/result/'):
+    os.makedirs('../../../public/data/result/')
+merged_file_path_2 = '../../../public/data/result/方法2得分.xlsx'
 merged_df_copy.to_excel(merged_file_path_2, index=False, engine='openpyxl')
 
 print(f'合并后的数据已保存到文件: {merged_file_path} 和 {merged_file_path_2}')

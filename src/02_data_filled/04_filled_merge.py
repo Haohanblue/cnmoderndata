@@ -25,6 +25,8 @@ merged_df = merged_df.sort_values(['省份', '时间'])
 output_file_path = '../../public/data/temp/02_数据处理与填充/04_合并后的填充数据.xlsx'
 merged_df.to_excel(output_file_path, index=False)
 
-output_file_path_2 = '../../public/data/result/02_填充的数据合集.xlsx'
+output_file_path_2 = '../../public/data/result/完整数据.xlsx'
 merged_df.to_excel(output_file_path_2, index=False)
+output_file_path_3 = '../../public/data/result/output/filled_data.xlsx'
+merged_df.to_excel(output_file_path_3, index=False)
 print(f'数据已成功合并并按照指定的省份顺序和时间升序保存到 {output_file_path}，同时保存到了{output_file_path_2}')
