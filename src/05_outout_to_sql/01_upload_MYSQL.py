@@ -23,7 +23,7 @@ for file_name in os.listdir(base_url):
         print(f"成功读取文件：{file_name}")
 
         # 将数据最多显示小数点后6位
-        df = df.round(6)
+        df = df.round(2)
 
         # 将DataFrame上传至数据库，并创建对应的表
         # 表名为文件名（不包括扩展名）

@@ -29,6 +29,8 @@ adjusted_file_path = '../../public/data/temp/01_初次合并/3_调整后的结�
 df.to_excel(adjusted_file_path, index=False)
 adjusted_file_path_2 = '../../public/data/result/原始数据.xlsx'  # 请替换为你的文件路径
 df.to_excel(adjusted_file_path_2, index=False)
+df = df.rename(columns={'省份': 'province'})
+df = df.rename(columns={'时间': 'year'})
 adjusted_file_path_3 = '../../public/data/result/output/source_data.xlsx'  # 请替换为你的文件路径
 df.to_excel(adjusted_file_path_3, index=False)
 # 打印结果路径
