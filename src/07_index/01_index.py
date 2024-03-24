@@ -12,7 +12,7 @@ df_indicator_codes = pd.DataFrame(indicator_codes, columns=['code'])
 
 # Concatenate the DataFrames along axis 1
 df = pd.concat([df_basic_indicators, df_units, df_indicator_codes], axis=1)
-output_file = '../../public/data/result/output/index.xlsx'
+output_file = '../../public/data/result/output/index_data.xlsx'
 if not output_file:
     os.makedirs(output_file)
 # Write the DataFrame to an Excel file
