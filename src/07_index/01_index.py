@@ -6,9 +6,9 @@ units = ['%', '%', '%', '岁', '%', '人', '无', '%', '%', '%', '人', '人', '
 indicator_codes = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9']
 
 # Convert the data to pandas DataFrames
-df_basic_indicators = pd.DataFrame(basic_indicators, columns=['基础指标'])
-df_units = pd.DataFrame(units, columns=['单位'])
-df_indicator_codes = pd.DataFrame(indicator_codes, columns=['指标代码'])
+df_basic_indicators = pd.DataFrame(basic_indicators, columns=['name'])
+df_units = pd.DataFrame(units, columns=['unit'])
+df_indicator_codes = pd.DataFrame(indicator_codes, columns=['code'])
 
 # Concatenate the DataFrames along axis 1
 df = pd.concat([df_basic_indicators, df_units, df_indicator_codes], axis=1)
